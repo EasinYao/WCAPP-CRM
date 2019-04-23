@@ -1,0 +1,25 @@
+{
+  "name": "wcapp-crm",
+  "version": "1.0.0",
+  "description": "this is a CRM project of WeChat App that based on Layui",
+  "private": true,
+  "scripts": {
+    "test": "npm test",
+    "start": "start http://localhost:3000 & node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EasinYao/WCAPP-CRM.git"
+  },
+  "author": "Easin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EasinYao/WCAPP-CRM/issues"
+  },
+  "homepage": "https://github.com/EasinYao/WCAPP-CRM#readme",
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "express": "^4.16.4"
+  },
+  "main": "app.js"
+}
