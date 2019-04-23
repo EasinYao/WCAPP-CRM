@@ -9,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <link rel="stylesheet" href="../../static/css/font.css">
     <link rel="stylesheet" href="../../static/css/weadmin.css">
-		<script src="../../lib/layui/layui.js" charset="utf-8"></script>
-		<script src="../../lib/layui/lay/common.js" charset="utf-8"></script>
+    <script src="../../lib/layui/layui.js" charset="utf-8"></script>
+    <script src="../../lib/layui/lay/common.js" charset="utf-8"></script>
     <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
     <!--[if lt IE 9]>
 	      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
@@ -69,11 +69,6 @@
                 <button class="layui-btn" lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
             </form>
         </div>
-        <div class="weadmin-block">
-            <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
-            <button class="layui-btn" onclick="WeAdminShow('添加订单','./add.html')"><i class="layui-icon"></i>添加</button>
-            <span class="fr" style="line-height:40px">共有数据：88 条</span>
-        </div>
         <!-- <table class="layui-table">
 				<thead>
 					<tr>
@@ -118,7 +113,8 @@
 						</td>
 					</tr>
 				</tbody>
-			</table> -->
+            </table> -->
+            
         <table class="layui-hide" id="test" lay-filter="test"></table>
         <div class="page">
             <div>
@@ -126,27 +122,25 @@
                 <a class="num" href="">1</a>
                 <span class="current">2</span>
                 <a class="num" href="">3</a>
-                <a class="num" href="">489</a>
+                <a class="num" href="">100</a>
                 <a class="next" href="">&gt;&gt;</a>
             </div>
         </div>
-		</div>
-		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    </div>
     <script type="text/html" id="barDemo">
         <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
-    </script>
+		</script>
     <script>
         layui.extend({
-						admin: '{/}../../static/js/admin',
-						common: '{/}../../lib/layui/lay/common'
-				});
-				
+            admin: '{/}../../static/js/admin',
+            common: '{/}../../lib/layui/lay/common'
+        });
         layui.use(['laydate', 'jquery', 'admin', 'table', 'common'], function() {
             var laydate = layui.laydate,
                 $ = layui.jquery,
-								laytable = layui.table,
-								common = layui.common,
+                table = layui.table,
+                common = layui.common,
                 admin = layui.admin;
             //执行一个laydate实例
             laydate.render({
@@ -155,18 +149,14 @@
             //执行一个laydate实例
             laydate.render({
                 elem: '#end' //指定元素
-						});
-						
-
-
-		        common.ajax('https://www.senderkong.com/ops/ordernotdeliver', 'get', 'json',
-						function (res) {
-		            alert(JSON.stringify(res));
-								conosle.log('asd', res);
-		        });
-            laytable.render({
+            });
+            // common.ajax('https://www.senderkong.com/ops/ordernotdeliver', 'get', 'json', function(res) {
+            //     alert(JSON.stringify(res));
+            //     conosle.log('asd', res);
+            // });
+            table.render({
                 elem: '#test',
-                url: '/test/table/demo1.json',
+                // url: 'https://www.senderkong.com/ops/ordernotdeliver',
                 toolbar: '#toolbarDemo',
                 title: '用户数据表',
                 totalRow: true,
@@ -175,158 +165,108 @@
                         type: 'checkbox',
                         fixed: 'left'
                     }, {
-                        field: 'id',
-                        title: 'ID',
-                        width: 80,
-                        fixed: 'left',
-                        unresize: true,
+                        field: 'orderid',
+                        title: '商品ID',
                         sort: true,
-                        totalRowText: '合计'
                     }, {
-                        field: 'username',
-                        title: '用户名',
+                        field: 'productname',
+                        title: '商品名',
                         width: 120,
-                        edit: 'text'
                     }, {
-                        field: 'email',
-                        title: '邮箱',
+                        field: 'cm',
+                        title: '身高',
+                        width: 80,
+                    }, {
+                        field: 'kg',
+                        title: '体重',
+                        width: 80,
+                    }, {
+                        field: 'address',
+                        title: '地址',
+                        width: 180,
+                    }, {
+                        field: 'phone',
+                        title: '电话',
                         width: 150,
-                        edit: 'text',
-                        templet: function(res) {
-                            return '<em>' + res.email + '</em>'
-                        }
                     }, {
-                        field: 'experience',
-                        title: '积分',
-                        width: 80,
-                        sort: true,
-                        totalRow: true
-                    }, {
-                        field: 'sex',
-                        title: '性别',
-                        width: 80,
-                        edit: 'text',
-                        sort: true
-                    }, {
-                        field: 'logins',
-                        title: '登入次数',
-                        width: 100,
-                        sort: true,
-                        totalRow: true
-                    }, {
-                        field: 'sign',
-                        title: '签名'
-                    }, {
-                        field: 'city',
-                        title: '城市',
-                        width: 100
-                    }, {
-                        field: 'ip',
-                        title: 'IP',
-                        width: 120
-                    }, {
-                        field: 'joinTime',
-                        title: '加入时间',
-                        width: 120
+                        field: 'orderid',
+                        title: '订单ID',
+                        width: 180,
                     }, {
                         fixed: 'right',
-                        title: '操作',
+                        title:'操作',
                         toolbar: '#barDemo',
-                        width: 150
+                        width:150
                     }]
                 ],
-                data: [{
-                    "id": "10001",
-                    "username": "杜甫",
-                    "email": "xianxin@layui.com",
-                    "sex": "男",
-                    "city": "浙江杭州",
-                    "sign": "人生恰似一场修行",
-                    "experience": "116",
-                    "ip": "192.168.0.8",
-                    "logins": "108",
-                    "joinTime": "2016-10-14"
+                "data": [{
+                    "orderid": "79ca968123fb41308ee859873c7c2921",
+                    "wxpayid": "wx161158209736975f1c5388400109573494",
+                    "userid": "ouccJ4wEvcz90FUwTnoNY_dYVYLU",
+                    "buyrent": "购买",
+                    "paydate": "2019-02-16 11:58:31",
+                    "cm": "180",
+                    "kg": "70",
+                    "productid": "2",
+                    "count": "1",
+                    "productname": "迪卡侬",
+                    "username": "李四",
+                    "phone": "13012345679",
+                    "address": "陕西省西安市雁塔区菊厂"
                 }, {
-                    "id": "10002",
-                    "username": "李白",
-                    "email": "xianxin@layui.com",
-                    "sex": "男",
-                    "city": "浙江杭州",
-                    "sign": "人生恰似一场修行",
-                    "experience": "12",
-                    "ip": "192.168.0.8",
-                    "logins": "106",
-                    "joinTime": "2016-10-14",
-                    "LAY_CHECKED": true
+                    "orderid": "67116cba97144952a1a19280b52d9e71",
+                    "wxpayid": "wx011800022139351db00abcf90224263524",
+                    "userid": "ouccJ4y88qLWUFv_PKdka80zJv6Q",
+                    "buyrent": "购买",
+                    "paydate": "2019-03-01 18:00:13",
+                    "cm": "186",
+                    "kg": "90",
+                    "productid": "2",
+                    "count": "1",
+                    "productname": "迪卡侬",
+                    "username": "刘育伟",
+                    "phone": "13012345678",
+                    "address": "陕西省西安市雁塔区菊厂"
                 }, {
-                    "id": "10003",
-                    "username": "王勃",
-                    "email": "xianxin@layui.com",
-                    "sex": "男",
-                    "city": "浙江杭州",
-                    "sign": "人生恰似一场修行",
-                    "experience": "65",
-                    "ip": "192.168.0.8",
-                    "logins": "106",
-                    "joinTime": "2016-10-14"
-                }, {
-                    "id": "10004",
-                    "username": "贤心",
-                    "email": "xianxin@layui.com",
-                    "sex": "男",
-                    "city": "浙江杭州",
-                    "sign": "人生恰似一场修行",
-                    "experience": "666",
-                    "ip": "192.168.0.8",
-                    "logins": "106",
-                    "joinTime": "2016-10-14"
-                }, {
-                    "id": "10005",
-                    "username": "贤心",
-                    "email": "xianxin@layui.com",
-                    "sex": "男",
-                    "city": "浙江杭州",
-                    "sign": "人生恰似一场修行",
-                    "experience": "86",
-                    "ip": "192.168.0.8",
-                    "logins": "106",
-                    "joinTime": "2016-10-14"
-                }, {
-                    "id": "10006",
-                    "username": "贤心",
-                    "email": "xianxin@layui.com",
-                    "sex": "男",
-                    "city": "浙江杭州",
-                    "sign": "人生恰似一场修行",
-                    "experience": "12",
-                    "ip": "192.168.0.8",
-                    "logins": "106",
-                    "joinTime": "2016-10-14"
-                }, {
-                    "id": "10007",
-                    "username": "贤心",
-                    "email": "xianxin@layui.com",
-                    "sex": "男",
-                    "city": "浙江杭州",
-                    "sign": "人生恰似一场修行",
-                    "experience": "16",
-                    "ip": "192.168.0.8",
-                    "logins": "106",
-                    "joinTime": "2016-10-14"
-                }, {
-                    "id": "10008",
-                    "username": "贤心",
-                    "email": "xianxin@layui.com",
-                    "sex": "男",
-                    "city": "浙江杭州",
-                    "sign": "人生恰似一场修行",
-                    "experience": "106",
-                    "ip": "192.168.0.8",
-                    "logins": "106",
-                    "joinTime": "2016-10-14"
+                    "orderid": "90ecda5ff2884138b76c1c69e0800f1e",
+                    "wxpayid": "wx1914465606015776ce8916442676815351",
+                    "userid": "ouccJ4y88qLWUFv_PKdka80zJv6Q",
+                    "buyrent": "租赁",
+                    "paydate": "2019-04-19 14:47:12",
+                    "cm": "186",
+                    "kg": "90",
+                    "productid": "2",
+                    "count": "2",
+                    "productname": "迪卡侬",
+                    "username": "刘育伟",
+                    "phone": "13012345678",
+                    "address": "陕西省西安市雁塔区菊厂"
                 }],
                 page: true
-            })
+                        });
+                        //监听行工具事件
+                table.on('tool(test)', function(obj){
+                    var data = obj.data;
+                    //console.log(obj)
+                    if(obj.event === 'del'){
+                    layer.confirm('真的删除行么', function(index){
+                        obj.del();
+                        layer.close(index);
+                    });
+                    } else if(obj.event === 'edit'){
+                    layer.prompt({
+                        formType: 2
+                        ,value: data.email
+                    }, function(value, index){
+                        obj.update({
+                        email: value
+                        });
+                        layer.close(index);
+                    });
+                    }
+                });
+
+
             /*用户-停用*/
             function member_stop(obj, id) {
                 layer.confirm('确认要停用吗？', function(index) {
