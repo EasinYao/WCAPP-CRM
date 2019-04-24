@@ -342,9 +342,9 @@ body {
 .left-nav #nav li .opened:hover {
   /*background: #fff 0 0 no-repeat;*/
 }
-.left-nav #nav li .sub-menu {
+/* .left-nav #nav li .sub-menu {
   display: none;
-}
+} */
 .left-nav #nav li .sub-menu li:hover {
   /*color: blue;*/
   /*background: #fff 0 0 no-repeat;*/

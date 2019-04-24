@@ -123,39 +123,39 @@ layui.define(['jquery', 'form', 'layer', 'element'], function(exports) {
 	 * @todo 左侧菜单事件
 	 * 如果有子级就展开，没有就打开frame
 	 */
-	$('.left-nav #nav li').click(function(event) {
-		if($(this).children('.sub-menu').length) {
-			if($(this).hasClass('open')) {
-				$(this).removeClass('open');
-				$(this).find('.nav_right').html('&#xe697;');
-				$(this).children('.sub-menu').stop().slideUp();
-				$(this).siblings().children('.sub-menu').slideUp();
-			} else {
-				$(this).addClass('open');
-				$(this).children('a').find('.nav_right').html('&#xe6a6;');
-				$(this).children('.sub-menu').stop().slideDown();
-				$(this).siblings().children('.sub-menu').stop().slideUp();
-				$(this).siblings().find('.nav_right').html('&#xe697;');
-				$(this).siblings().removeClass('open');
-			}
-		} else {
-			var url = $(this).children('a').attr('_href');
-			var title = $(this).find('cite').html();
-			var index = $('.left-nav #nav li').index($(this));
+	// $('.left-nav #nav li').click(function(event) {
+	// 	if($(this).children('.sub-menu').length) {
+	// 		if($(this).hasClass('open')) {
+	// 			$(this).removeClass('open');
+	// 			$(this).find('.nav_right').html('&#xe697;');
+	// 			$(this).children('.sub-menu').stop().slideUp();
+	// 			$(this).siblings().children('.sub-menu').slideUp();
+	// 		} else {
+	// 			$(this).addClass('open');
+	// 			$(this).children('a').find('.nav_right').html('&#xe6a6;');
+	// 			$(this).children('.sub-menu').stop().slideDown();
+	// 			$(this).siblings().children('.sub-menu').stop().slideUp();
+	// 			$(this).siblings().find('.nav_right').html('&#xe697;');
+	// 			$(this).siblings().removeClass('open');
+	// 		}
+	// 	} else {
+	// 		var url = $(this).children('a').attr('_href');
+	// 		var title = $(this).find('cite').html();
+	// 		var index = $('.left-nav #nav li').index($(this));
 
-			for(var i = 0; i < $('.weIframe').length; i++) {
-				if($('.weIframe').eq(i).attr('tab-id') == index + 1) {
-					tab.tabChange(index + 1);
-					event.stopPropagation();
-					return;
-				}
-			};
+	// 		for(var i = 0; i < $('.weIframe').length; i++) {
+	// 			if($('.weIframe').eq(i).attr('tab-id') == index + 1) {
+	// 				tab.tabChange(index + 1);
+	// 				event.stopPropagation();
+	// 				return;
+	// 			}
+	// 		};
 
-			tab.tabAdd(title, url, index + 1);
-			tab.tabChange(index + 1);
-		}
-		event.stopPropagation(); //不触发任何前辈元素上的事件处理函数
-	});
+	// 		tab.tabAdd(title, url, index + 1);
+	// 		tab.tabChange(index + 1);
+	// 	}
+	// 	event.stopPropagation(); //不触发任何前辈元素上的事件处理函数
+	// });
 
 	/*
 	 * @todo tab触发事件：增加、删除、切换

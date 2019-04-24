@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>待收货 后台管理系统 WCAPP-CRM 1.0</title>
+    <title>待返还处理 后台管理系统 WCAPP-CRM 1.0</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -12,7 +12,6 @@
     <script src="../../lib/layui/layui.js" charset="utf-8"></script>
     <script src="../../lib/layui/lay/common.js" charset="utf-8"></script>
     <link rel="stylesheet" href="../../lib/layui/css/layui.css"  media="all">
-
 </head>
 
 <body>
@@ -20,21 +19,14 @@
         <span class="layui-breadcrumb">
             <a href="">首页</a>
             <a href="">订单管理</a>
-            <a><cite>待收货</cite></a>
+            <a><cite>待返还处理</cite></a>
         </span>
         <a class="layui-btn layui-btn-sm" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
             <i class="layui-icon" style="line-height:30px">ဂ</i></a>
     </div>
     <div class="weadmin-body">
         <div class="layui-row">
-            <form class="layui-form layui-col-md12 we-search">
-                <div class="layui-inline">
-                    <input type="text" name="username" placeholder="请输入订单号" autocomplete="off" class="layui-input">
-                </div>
-                <button class="layui-btn" lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
-            </form>
         </div>
-            
         <table class="layui-hide" id="test" lay-filter="test"></table>
         <div class="page">
             <div>
@@ -88,7 +80,6 @@
                         field: 'orderid',
                         title: '商品ID',
                         sort: true,
-                        width: 290,
                     }, {
                         field: 'productname',
                         title: '商品名',
@@ -108,29 +99,12 @@
                     }, {
                         field: 'phone',
                         title: '电话',
-                        width: 120,
-                    }, {
-                        field: 'status',
-                        title: '状态',
-                        width: 80,
+                        width: 150,
                     }, {
                         field: 'orderid',
                         title: '订单ID',
-                        width: 290,
-                    }, {
-                        field: 'decom',
-                        title: '物流公司',
-                        width: 100,
-                    }, {
-                        field: 'deliverid',
-                        title: '运单号',
-                        width: 150,
-                    }, {
-                        field: 'deliverdate',
-                        title: '发货时间',
                         width: 180,
-                    }, 
-                     {
+                    }, {
                         fixed: 'right',
                         title:'操作',
                         toolbar: '#barDemo',
@@ -138,72 +112,45 @@
                     }]
                 ],
                 "data": [{
-                    "orderid": "34b091b9633b4d979cae0abc55cb1e78",
-                    "waitpayid": "34b091b9633b4d979cae0abc55cb1e78",
-                    "payorderid": "wx011832262127806505bddf662292369728",
-                    "payby": null,
+                    "orderid": "79ca968123fb41308ee859873c7c2921",
+                    "wxpayid": "wx161158209736975f1c5388400109573494",
+                    "userid": "ouccJ4wEvcz90FUwTnoNY_dYVYLU",
+                    "buyrent": "购买",
+                    "paydate": "2019-02-16 11:58:31",
+                    "cm": "180",
+                    "kg": "70",
+                    "productid": "2",
+                    "count": "1",
+                    "productname": "迪卡侬",
+                    "username": "李四",
+                    "phone": "13012345679",
+                    "address": "陕西省西安市雁塔区菊厂"
+                }, {
+                    "orderid": "67116cba97144952a1a19280b52d9e71",
+                    "wxpayid": "wx011800022139351db00abcf90224263524",
                     "userid": "ouccJ4y88qLWUFv_PKdka80zJv6Q",
-                    "totalprice": 2,
-                    "status": "待收货",
-                    "buy_rent": "1",
-                    "deliverid": "75123005242093",
-                    "generatedate": "2019-03-01 18:32:25",
-                    "productid": "3",
-                    "quantity": "1",
-                    "retquantity": "1",
-                    "paydate": "2019-03-01 18:32:34",
-                    "deliverdate": "2019-03-01 18:34:14",
-                    "reachdate": "2019-03-01 18:34:32",
+                    "buyrent": "购买",
+                    "paydate": "2019-03-01 18:00:13",
                     "cm": "186",
                     "kg": "90",
-                    "decom": "zt",
-                    "productname": "胸腰骶矫形器",
+                    "productid": "2",
+                    "count": "1",
+                    "productname": "迪卡侬",
+                    "username": "刘育伟",
                     "phone": "13012345678",
                     "address": "陕西省西安市雁塔区菊厂"
                 }, {
-                    "orderid": "12b091b9633b4d979cae0abc55cb1e34",
-                    "waitpayid": "12b091b9633b4d979cae0abc55cb1e34",
-                    "payorderid": "wx233832262127806505bddf662292369728",
-                    "payby": null,
+                    "orderid": "90ecda5ff2884138b76c1c69e0800f1e",
+                    "wxpayid": "wx1914465606015776ce8916442676815351",
                     "userid": "ouccJ4y88qLWUFv_PKdka80zJv6Q",
-                    "totalprice": 2,
-                    "status": "待收货",
-                    "buy_rent": "1",
-                    "deliverid": "34123005242093",
-                    "generatedate": "2019-03-01 18:32:25",
-                    "productid": "3",
-                    "quantity": "1",
-                    "retquantity": "1",
-                    "paydate": "2019-03-01 18:32:34",
-                    "deliverdate": "2019-03-01 18:34:14",
-                    "reachdate": "2019-03-01 18:34:32",
+                    "buyrent": "租赁",
+                    "paydate": "2019-04-19 14:47:12",
                     "cm": "186",
                     "kg": "90",
-                    "decom": "zt",
-                    "productname": "胸腰骶矫形器",
-                    "phone": "13012345678",
-                    "address": "陕西省西安市雁塔区菊厂"
-                }, {
-                    "orderid": "56b091b9633b4d979cae0abc55cb1e00",
-                    "waitpayid": "56b091b9633b4d979cae0abc55cb1e00",
-                    "payorderid": "wx123452262127806505bddf662292369728",
-                    "payby": null,
-                    "userid": "ouccJ4y88qLWUFv_PKdka80zJv6Q",
-                    "totalprice": 2,
-                    "status": "待收货",
-                    "buy_rent": "1",
-                    "deliverid": "00863005242093",
-                    "generatedate": "2019-03-01 18:32:25",
-                    "productid": "3",
-                    "quantity": "1",
-                    "retquantity": "1",
-                    "paydate": "2019-03-01 18:32:34",
-                    "deliverdate": "2019-03-01 18:34:14",
-                    "reachdate": "2019-03-01 18:34:32",
-                    "cm": "186",
-                    "kg": "90",
-                    "decom": "zt",
-                    "productname": "胸腰骶矫形器",
+                    "productid": "2",
+                    "count": "2",
+                    "productname": "迪卡侬",
+                    "username": "刘育伟",
                     "phone": "13012345678",
                     "address": "陕西省西安市雁塔区菊厂"
                 }],
@@ -212,25 +159,31 @@
                         //监听行工具事件
                 table.on('tool(test)', function(obj){
                     var data = obj.data;
-                    console.log(obj)
+                    //console.log(obj)
                     if(obj.event === 'del'){
                     layer.confirm('真的删除行么', function(index){
                         obj.del();
                         layer.close(index);
                     });
                     } else if(obj.event === 'edit'){
-
-
-                    layer.confirm('确认已收货？', {
-                        btn: ['确认','取消'] //按钮
-                        }, function(index, value){
-                        layer.msg('确认了');
-                        console.log(index, value, obj);
-                        //发请求  用obj获取监听事件 处理后发起相应请求
-                        // post请求，参数为userid和orderid
-                        }, function(){
-                        layer.msg('取消了');
+                    // layer.prompt({
+                    //     formType: 2
+                    //     ,value: data.email
+                    // }, function(value, index){
+                    //     obj.update({
+                    //     email: value
+                    //     });
+                    //     layer.close(index);
+                    // });
+                    layer.open({
+                        type: 2,
+                        area: ['400px', '200px'],
+                        fixed: false, //不固定
+                        maxmin: true,
+                        content: './returnTemplate.html'
                         });
+                        //use obj to catch event
+                        //invoke api after data processed
                     }
                 });
 
