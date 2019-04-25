@@ -29,9 +29,9 @@
         <div class="layui-row">
             <form class="layui-form layui-col-md12 we-search">
                 <div class="layui-inline">
-                    <input type="text" name="username" placeholder="请输入订单号" autocomplete="off" class="layui-input">
+                    <input type="text" name="id" id="demoReload" placeholder="请输入订单号" autocomplete="off" class="layui-input">
                 </div>
-                <button class="layui-btn" lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
+                <button class="layui-btn search-btn" data-type="reload" lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
             </form>
         </div>
             
@@ -80,6 +80,7 @@
                 toolbar: '#toolbarDemo',
                 title: '用户数据表',
                 totalRow: true,
+                id: 'searchReload',
                 cols: [
                     [{
                         type: 'checkbox',
@@ -280,7 +281,30 @@
                     $(".layui-form-checked").not('.header').parents('tr').remove();
                 });
             }
+
+            var $ = layui.$, active = {
+                reload: function(){
+                var demoReload = $('#demoReload');
+                
+                //执行重载
+                table.reload('searchReload', {
+                    page: {
+                    curr: 1 //重新从第 1 页开始
+                    }
+                    ,where: {
+                    key: {
+                        id: demoReload.val()
+                    }
+                    }
+                });
+                }
+            };
+            $('.we-search .search-btn').on('click', function(){
+                var type = $(this).data('type');
+                active[type] ? active[type].call(this) : '';
+            });
         });
+       
     </script>
 </body>
 
