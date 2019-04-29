@@ -1,14 +1,37 @@
 
+<head>
+    <link rel="stylesheet" href="../../static/css/popup.css">
+</head>
 <div class="layui-fluid">
-        <form class="layui-form" action="" lay-filter="component-form-group">
-            <div class="layui-form-item">
-                <label class="layui-form-label">返还金额</label>
-                <div class="layui-input-block">
-                    <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入" class="layui-input">
-                </div>
+    <form class="layui-form return-template" action="" lay-filter="component-form-group">
+        <div class="layui-form-item">
+            <label class="layui-form-label">返还金额</label>
+            <div class="layui-input-block returnInput">
+                <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入返还金额" class="layui-input">
             </div>
-        </form>
-        <button class="layui-btn">确认</button>
-        <button class="layui-btn layui-btn-danger">取消</button>
-    </div>
-    
+        </div>
+    </form>
+</div>
+<script src="../../lib/layui/layui.js" charset="utf-8"></script>
+<script>
+    // layui.use(['jquery', 'layer', 'form'], function() {
+        // var layer = layui.layer,
+        //         $ = layui.jquery,
+        //         form = layui.form;
+        //     form.on("select(logisticsSelect)", function(data){
+        //         alert(data.value); 
+        //         form.render('select');
+        //     });
+        
+        var returnDataCallback = function() {
+            var deliveryData = {
+                value: 20
+            }
+            return deliveryData;
+        }
+
+    // });
+    // var form = layui.form, layer = layui.layer;
+   
+    // console.log('ABC', $parents.obj);
+</script>

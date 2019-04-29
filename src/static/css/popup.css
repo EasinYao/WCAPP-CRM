@@ -1,0 +1,40 @@
+@charset "utf-8";
+.delivery-template .logisticsSelectSection {
+    display: inline-block;
+}
+.delivery-template .deliveryNumberInput {
+    display: inline-block;
+}
+.logisticsSelectBlock {
+    padding: 10px;
+}
+.logisticsSelectBlock .layui-form-label {
+    padding-right: 20px;
+}
+.logisticsSelectBlock select {
+    height: 26px;
+    width: 160px;
+}
+.deliveryNumberBlock {
+    padding: 10px;
+}
+.deliveryNumberBlock input {
+    height: 35px;
+    width: 160px;
+}
+.deliveryNumberBlock .layui-form-label {
+    padding-right: 4px;
+}
+.return-template .layui-form-item {
+    padding: 10px;
+}
+.return-template .layui-form-label {
+    padding-right: 20px;
+}
+.return-template .returnInput {
+    display: inline-block;
+}
+.return-template input {
+    height: 35px;
+    width: 160px;
+}

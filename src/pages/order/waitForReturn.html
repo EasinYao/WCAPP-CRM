@@ -180,7 +180,14 @@
                         area: ['400px', '200px'],
                         fixed: false, //不固定
                         maxmin: true,
-                        content: './returnTemplate.html'
+                        btn: ['确认','取消'],
+                        content: './returnTemplate.html',
+                        yes: function(index, value) {
+                            console.log(index, value);
+                            //get datas form popup iframe
+                            var res = window['layui-layer-iframe' + index].returnDataCallback();
+                            console.log(res);
+                        }
                         });
                         //use obj to catch event
                         //invoke api after data processed
